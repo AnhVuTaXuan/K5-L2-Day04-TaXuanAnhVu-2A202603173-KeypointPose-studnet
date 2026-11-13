@@ -20,13 +20,13 @@ Dữ liệu: 12 ảnh người COCO val2017 (Lin et al., 2014) và 8 ảnh chân
 
 | Label | Kiểu | Số điểm | Tên điểm đúng bảng của lab? | Đúng thứ tự? | Số cạnh |
 |---|---|---:|---|---|---:|
-| `person` | | | | | |
-| `face` | | | | | |
+| `person` |Keypoint |17|Có|Có|19|
+| `face` |Keypoint|13|Có|Có|13|
 
-Mẫu `person` dựng theo người quay mặt về camera (các điểm `left_*` nằm bên phải khung mẫu)? Có / Không
+Mẫu `person` dựng theo người quay mặt về camera (các điểm `left_*` nằm bên phải khung mẫu)? Có / Không : Có
 
 Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bản CVAT này (một câu):
-
+Chọn keypoint cần chỉnh sửa trên Skeleton, sau đó thay đổi thuộc tính Occluded / Outside trong bảng thuộc tính của keypoint đó.
 ...
 
 ## 2. Số lượng đã gán và thời gian (CP1, CP2)
@@ -40,10 +40,10 @@ Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bả
 | `crowd` | 1 | | | | |
 | `faces` | 8 | | — | | |
 
-- Số ảnh người đã xong ở mốc phút 105: ___ / 10
-- Thời gian thực tế (phút): CP1 ___ · CP2 ___ · CP3 ___
+- Số ảnh người đã xong ở mốc phút 105: 10 / 10
+- Thời gian thực tế (phút): CP1 50 · CP2 30 · CP3 25
 - Ảnh tốn thời gian nhất là ảnh nào, vì sao?
-
+ Ảnh e000000542160.jpg trong label person vì số lượng người nhiều , điểm dự đoán v=1 nhiều
 ...
 
 ## 3. Bảng ca khó (CP1, CP2)
@@ -52,7 +52,7 @@ Mỗi điểm bạn phân vân một dòng, nhất là phân vân giữa `v = 1`
 
 | Ảnh | Người / mặt | Điểm | Cờ đã chọn | Phân vân giữa | Lý do chọn |
 |---|---|---|---:|---|---|
-| | | | | | |
+|000000480582.jpg |Người | | | | |
 | | | | | | |
 | | | | | | |
 
@@ -104,7 +104,7 @@ Dán phần **TÓM TẮT** in ra từ `src/check_submission.py`:
 - File person: TaXuanAnhVu_persons.zip
   Số ảnh: 12 · số skeleton `person`: 20 · mỗi annotation 51 số
   Skeleton theo ảnh: 000000019754=1, 000000069971=2, 000000072098=1, 000000091637=2, 000000157271=2, 000000189365=2, 000000196283=1, 000000211458=1, 000000292999=1, 000000480582=2, 000000542160=3, 000000572411=2
-  Cờ v: v=2 241 (71%) · v=1 51 (15%) · v=0 48 (14%)
+  Cờ v: v=2 253 (74%) · v=1 39 (11%) · v=0 48 (14%)
   num_keypoints trung bình: 14.6
 - File face: TaXuanAnhVu_faces.zip
   Số ảnh: 8 · số skeleton `face`: 8 · mỗi annotation 39 số
@@ -121,8 +121,9 @@ Các `[CẢNH BÁO]` còn giữ nguyên và lý do:
  [CẢNH BÁO] 000000019754.jpg #1: cặp wrist nằm ngược phía so với các cặp còn lại. Có thể đổi trái/phải một cặp (`lr_swap`), hoặc tay / chân bắt chéo thật: kiểm lại.
   [CẢNH BÁO] 000000292999.jpg #1: cặp elbow nằm ngược phía so với các cặp còn lại. Có thể đổi trái/phải một cặp (`lr_swap`), hoặc tay / chân bắt chéo thật: kiểm lại.
   [CẢNH BÁO] 000000542160.jpg #1: cặp ear nằm ngược phía so với các cặp còn lại. Có thể đổi trái/phải một cặp (`lr_swap`), hoặc tay / chân bắt chéo thật: kiểm lại.
-  [CẢNH BÁO] 000000542160.jpg #2: cặp knee, ankle nằm ngược phía so với các cặp còn lại. Có thể đổi trái/phải một cặp (`lr_swap`), hoặc tay /chân bắt chéo thật: kiểm lại.
+  [CẢNH BÁO] 000000542160.jpg #3: cặp knee, ankle nằm ngược phía so với các cặp còn lại. Có thể đổi trái/phải một cặp (`lr_swap`), hoặc tay /chân bắt chéo thật: kiểm lại.
   [CẢNH BÁO] 000000572411.jpg #1: cặp wrist nằm ngược phía so với các cặp còn lại. Có thể đổi trái/phải một cặp (`lr_swap`), hoặc tay / chân bắt chéo thật: kiểm lại.
+
 Lý do : do người đúng  ngược hướng với khung skeleton, do người đứng nhiều tư thế lại , đã điểm tra và xác nhận không có vấn đề gì.
 ## 6. Ảnh chụp màn hình
 
@@ -174,7 +175,7 @@ Nguồn ảnh: COCO val2017 / Wikimedia Commons.
 
 Kết quả `src/check_submission.py` cho `HoVaTen_bonus_persons.zip`:
 
-```----- TÓM TẮT (dán vào báo cáo mục 5) -----
+``----- TÓM TẮT (dán vào báo cáo mục 5) -----
 - File person: TaXuanAnhVu_bonus_persons.zip
   Số ảnh: 3 · số skeleton `person`: 9 · mỗi annotation 51 số
   Skeleton theo ảnh: 000000074156=3, 000000161603=3, 000000465508=3
