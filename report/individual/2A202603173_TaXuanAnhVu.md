@@ -6,15 +6,15 @@ Dữ liệu: 12 ảnh người COCO val2017 (Lin et al., 2014) và 8 ảnh chân
 
 ## 0. Thông tin học viên
 
-- Họ tên:
-- MSSV:
-- Email:
-- Link repository:
-- Phiên bản CVAT (Help → About):
-- Máy: hệ điều hành ___ · RAM ___ GB · chạy CVAT chế độ đầy đủ / lite
-- Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có / không
-- Giờ bắt đầu:
-- Giờ kết thúc:
+- Họ tên:Tạ Xuân Anh Vũ
+- MSSV:2A202603173
+- Email:anhvudepzai211104@gmail.com
+- Link repository:https://github.com/AnhVuTaXuan/K5-L2-Day04-TaXuanAnhVu-2A202603173-KeypointPose
+- Phiên bản CVAT (Help → About):2.74.1
+- Máy: hệ điều hành Win11 · RAM 32 GB · chạy CVAT chế độ đầy đủ / lite: Đầy đủ
+- Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có / không : Có
+- Giờ bắt đầu:16h40
+- Giờ kết thúc:19h30
 
 ## 1. Kiểm tra label (CP0)
 
@@ -40,7 +40,7 @@ Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bả
 | `crowd` | 1 | | | | |
 | `faces` | 8 | | — | | |
 
-- Số ảnh người đã xong ở mốc phút 105: ___ / 10
+- Số ảnh người đã xong ở mốc phút 105: 10 / 10
 - Thời gian thực tế (phút): CP1 ___ · CP2 ___ · CP3 ___
 - Ảnh tốn thời gian nhất là ảnh nào, vì sao?
 
