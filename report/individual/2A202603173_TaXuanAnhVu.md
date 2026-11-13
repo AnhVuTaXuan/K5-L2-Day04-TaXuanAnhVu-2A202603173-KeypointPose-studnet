@@ -52,10 +52,8 @@ Mỗi điểm bạn phân vân một dòng, nhất là phân vân giữa `v = 1`
 
 | Ảnh | Người / mặt | Điểm | Cờ đã chọn | Phân vân giữa | Lý do chọn |
 |---|---|---|---:|---|---|
-|000000480582.jpg |Người | | | | |
-| | | | | | |
-| | | | | | |
-
+| 000000480582.jpg | Người 2 (bé trai) | left_knee / right_knee | 2 | Chân trái / chân phải | Tư thế bước đi khiến hai chân chồng lấp, khó xác định chính xác bên giải phẫu |
+| 000000480582.jpg | Người 2 (bé trai) | left_ankle / right_ankle | 2 | Chân trái / chân phải | Hai chân bắt chéo khi di chuyển, khó xác định điểm mắt cá nào thuộc chân trái hoặc chân phải |
 ## 4. Bảng tự review (CP3)
 
 Đi từ ảnh cuối về ảnh đầu. 5 ảnh người (ít nhất 2 ảnh `back` hoặc `crowd`) và 3 ảnh mặt. Ít nhất 8 dòng, kể cả dòng `ok`. Ghi lỗi trước, sửa sau.
@@ -175,7 +173,7 @@ Nguồn ảnh: COCO val2017 / Wikimedia Commons.
 
 Kết quả `src/check_submission.py` cho `HoVaTen_bonus_persons.zip`:
 
-``----- TÓM TẮT (dán vào báo cáo mục 5) -----
+```----- TÓM TẮT (dán vào báo cáo mục 5) -----
 - File person: TaXuanAnhVu_bonus_persons.zip
   Số ảnh: 3 · số skeleton `person`: 9 · mỗi annotation 51 số
   Skeleton theo ảnh: 000000074156=3, 000000161603=3, 000000465508=3
